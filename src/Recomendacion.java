@@ -13,6 +13,7 @@ public class Recomendacion {
             "\n\t1.) Cargar Archivo." +
             "\n\t2.) Salir.";
 
+    // Instrucciones para ingreso de datos
     final static String INSTRUCCIONES = "\nIngrese el número de opción del menú: ";
 
     public static void main(String[] args){

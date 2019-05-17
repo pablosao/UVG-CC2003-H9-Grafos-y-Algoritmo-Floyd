@@ -4,6 +4,9 @@ import static java.lang.String.format;
 
 /***
  * Extraído de: https://rosettacode.org/wiki/Floyd-Warshall_algorithm
+ *
+ * Modifico: Pablo Sao
+ * @version 16/05/2019
  */
 
 public class FloydWarshall{

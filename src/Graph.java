@@ -11,6 +11,12 @@ class Edge {
     int endVertex;
     int weight;
 
+    /***
+     * Crea relación
+     * @param start nodo de inicio
+     * @param end nodo final
+     * @param distance peso entre los nodos (distancia)
+     */
     public Edge (int start, int end, int distance){
         startVertex = start;
         endVertex = end;
@@ -25,6 +31,11 @@ public class Graph {
     private ArrayList ciudades = new ArrayList();
     private int vertex;
 
+    /***
+     * Crea matriz de adyacencia
+     * @param datos ArrayList con la información de la ciudad origen, ciudad destino, y la distancia
+     * @return True si se crea de forma correcta la matriz, de lo contrario retorna false
+     */
     public boolean createMatrix(ArrayList datos){
 
 
@@ -83,6 +94,9 @@ public class Graph {
         return true;
     }
 
+    /***
+     * Impresión de Matriz de adyacencia
+     */
     public void printMatrix(){
 
         for(int i = 0; i< vertex; i++){
@@ -94,6 +108,9 @@ public class Graph {
 
     }
 
+    /***
+     * Metodo para aplicar el algoritmo de Floyd, donde imprime la recomendación de ruta
+     */
     public void algFloydWarshall(){
 
         FloydWarshall.floydWarshall(MATRIX, vertex,ciudades);
