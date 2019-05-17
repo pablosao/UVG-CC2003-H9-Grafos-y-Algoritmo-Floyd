@@ -108,7 +108,7 @@ public class DataManager {
      * @param VALUE String a convertir
      * @return valor en su tipo de dato
      */
-    private static Object getAtom(String VALUE) {
+    public static Object getAtom(String VALUE) {
         try {
             //Si es entero, retornamos el valor en tipo int
             return Integer.parseInt(VALUE);

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /***
  * Clase principal para el manejo de la aplicación
@@ -37,9 +38,30 @@ public class Recomendacion {
                     if(DataManager.getExists(path)){
                         //Llamado a la clase para realizar proceso de carga de información
 
-                        String dato = DataManager.getDataFile(path,",");
+                        String dato = DataManager.getDataFile(path,";");
                         try{
                             // PROCESO DE CARGA
+
+                            ArrayList info = (ArrayList)DataManager.getStringTokens(";",dato);
+
+                            if(!info.isEmpty()){
+                                //Creando matriz adyacente
+                                Graph grafo = new Graph();
+
+                                if(grafo.createMatrix(info)){
+                                    grafo.printMatrix();
+                                    System.out.println("\nRecomendación de rutas:");
+                                    grafo.algFloydWarshall();
+                                }
+                                else{
+                                    System.out.println("\n\n\t\t\tExiste un problema con el archivo cargado.");
+                                    break;
+                                }
+                            }
+                            else{
+                                System.out.println("\n\n\t\t\tEl archivo se encuentra vacio");
+                            }
+
                         }
                         catch (Exception e){
                             System.out.println(e.toString());
